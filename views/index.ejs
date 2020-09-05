@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-</head>
+<%- include('./partials/head.ejs') %>
 
 <body>
-  <h1>HOME PAGE</h1>
-  <p>Main Page of This Website </p>
+  <%- include('./partials/nav.ejs') %>
+
+  <main class="error content">
+    <h1>All Blogs </h1>
+
+    <% if(blogs.length > 0) { %>
+    <% blogs.forEach(blog =>{ %>
+
+    <h2> <%= blog.title %> </h2>
+    <p> <%= blog.snippet %></p>
+
+
+    <% }) %>
+    <% } %>
+  </main>
+
+  <%- include('./partials/footer.ejs') %>
 </body>
 
 </html>

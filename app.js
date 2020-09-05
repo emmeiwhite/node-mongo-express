@@ -29,21 +29,28 @@ app.use((req, res) => {
 
 ---- */
 
-// Handling routes using ejs 
+// Handling routes using ejs  || Now comes the amazing part. Sending Dynamic data to our ejs
 
 app.get('/', (req, res) => {
-  res.render('index');
+  // Passing blogs to Home page
+  const blogs = [
+    { title: "Yoshi Find Eggs", snippet: "Eggs are healthy source of protein and vitamins" },
+    { title: "People Roam around", snippet: "Most of the people roam here and there" },
+    { title: "How to defeat laziness", snippet: "Believe in yourself and face the challenges" },
+  ];
+
+  res.render('index', { title: "Home", blogs });
 });
 
 app.get('/about', (req, res) => {
-  res.render('about');
+  res.render('about', { title: "About" });
 });
 
-app.get('/contact', (req, res) => {
-  res.render('contact');
+app.get('/blogs/create', (req, res) => {
+  res.render('create', { title: "Contact" });
 });
 
 // Middleware
 app.use((req, res) => {
-  res.status(404).render('404');
+  res.status(404).render('404', { title: "ERROR" });
 });
