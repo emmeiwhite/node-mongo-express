@@ -2,4 +2,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Page <%= {title} %> </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: #777;
+    }
+
+    a:hover {
+      color: rgb(199, 8, 8);
+    }
+
+    body {
+      max-width: 1200px;
+      margin: 20px auto;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav h1 {
+      font-size: 3rem;
+      color: rgb(199, 8, 8);
+    }
+
+    nav .main-menus {
+      display: flex;
+      list-style: none;
+      align-items: flex-end;
+      min-width: 300px;
+      justify-content: space-evenly;
+    }
+
+    .content {
+      min-height: 400px;
+    }
+
+    /* --- create blog --- */
+    .create-blog form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 1rem;
+      /* border: 1px solid #ccc; */
+    }
+
+    .create-blog form input,
+    .create-blog form textarea,
+    .create-blog form button {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgb(199, 8, 8);
+      outline: none;
+      margin: 0.5rem 0;
+    }
+
+    .create-blog form button {
+      background: transparent;
+      cursor: pointer;
+    }
+
+    /* --- keep adding more styling as the time progresses --- */
+  </style>
 </head>

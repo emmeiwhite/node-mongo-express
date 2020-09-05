@@ -29,6 +29,21 @@ app.use((req, res) => {
 
 ---- */
 
+
+// Custom Middleware: Let's log message on the console on every request
+app.use((req, res, next) => {
+  console.log('NEW REQUEST MADE');
+  console.log('host', req.hostname);
+  console.log('path', req.path);
+  console.log('host', req.method);
+  next();
+});
+
+app.use((req, res, next) => {
+  console.log('In the next middleware !!!');
+  next();
+})
+
 // Handling routes using ejs  || Now comes the amazing part. Sending Dynamic data to our ejs
 
 app.get('/', (req, res) => {
